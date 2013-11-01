@@ -1,6 +1,6 @@
 angular.module("dg", ["ngRoute", "ngTouch", "ngAnimate", "ngResource", "ngSanitize", "dgConfig", "dgCommon", "dgHome", "dgUser", "dgSearch", "dgMusic", "dgPage", "dgPost", "dgConnect", "dgSetting", "dgFeedback", "dgWizard", "dgTemplates"]).controller("DragonCtrl", ["$scope", "$window", "$timeout", "$location", "G", "Meta", "Like", "Flash", "Device", "Player", "Layout", "Tracker", "Session", "PlaybackState",
 	function(a, b, c, d, e, f, g, h, i, j, k, l, m, n) {
-		"use strict";
+		"use strict"; 
 		m.requestCurrentUser(), this.g = e, this.meta = f, this.like = g, this.flash = h, this.layout = k, this.device = i, this.player = j, this.session = m, this.location = d, this.modernizr = Modernizr, this.playbackState = n;
 		var o, p, q = angular.element(b);
 		q.bind("scroll touchmove", function() {
