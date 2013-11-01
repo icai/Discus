@@ -1,0 +1,103 @@
+/*--------------------------------------------------|
+| dTree 2.05 | www.destroydrop.com/javascript/tree/ |
+|---------------------------------------------------|
+| Copyright (c) 2002-2003 Geir Landr?              |
+|--------------------------------------------------*/
+
+/*-----add by Nicholas for ctreetable-----*/
+.ctreetable {
+	font-size:13px;
+	white-space: nowrap;
+	/*border-left:#f2f2f2 solid 1px;
+	border-top:#f2f2f2 solid 1px;
+	border-bottom:#f2f2f2 solid 1px;*/
+    background-color:#FFFFFF;
+}
+
+.ctreetable img {
+	border: 0px;
+	vertical-align: middle;
+}
+.ctreetable a:hover {
+	color: #f2f2f2;
+	text-decoration: underline;
+}
+.ctreetable .clip {
+	/*overflow: hidden;*/
+}
+
+
+/*-----add by Nicholas for dtree tr-------*/
+.ctreetable th {
+    padding-top:4px;
+	padding-bottom:2px;
+	font-size:13px;
+	background: #B9CCEB;
+	padding: 10px;
+	border-right: 1px solid #96AFE7;
+	border-bottom: 1px solid #96AFE7;
+	text-align: center;
+	vertical-align: middle;
+
+
+	font-weight: bold;
+	color: #293850;
+}
+.ctreetable td {
+	border-right:#E4EAF5 solid 1px;
+	border-bottom:#E4EAF5 solid 1px;
+	text-align: center;
+	vertical-align: middle;
+}
+.ctreetable tr.cttRow, .ctreetable tr.cttRowSel {
+	white-space: nowrap;
+}
+.ctreetable tr.cttRow:hover td, .ctreetable tr.cttRowSel:hover td {
+	background: #F2F7FE;
+}
+.ctreetable td.node, td.nodeSel {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding-left:8px;
+	border-right:#E4EAF5 solid 1px;
+	border-left:none;
+	border-top:none;
+	text-align: left;
+}
+.ctreetable td.node {
+	text-align: left;
+    filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#f2f2f2', endColorStr='#f2f2f2', gradientType='1');
+}
+.ctreetable tr.cttRowSel, .ctreetable td.nodeSel {
+    background-color:#f2f2f2;
+}
+
+.ctreetable .numberinput {
+	text-align:right;
+	border:1px solid #f2f2f2;
+	height:15px;
+	width:60px;
+}
+
+
+.ctreetable .nodeHlRed {
+	color: #FF0000;
+}
+
+.ctreetable .nodeDpt0 td{
+	background:#F1F6FC;
+}
+.ctreetable .nodeDpt0 .node,.ctreetable .nodeDpt0 .nodeSel{
+	color:#3F68BB;
+	font-weight: bold;
+}
+
+.ctreetable .nodeDpt1 .node,.ctreetable .nodeDpt1 .nodeSel{
+	color:#35507B;
+	font-weight: bold;
+}
+
+.ctreetable .operate,.ctreetable .operate:hover{
+	color:#3366CC;
+}
+

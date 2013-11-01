@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>treelevel demo</title>
+	<style type="text/css">
+	/**
+	 * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+	 * http://cssreset.com
+	 */
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	</style>
+	<link rel="stylesheet" href="ctreetable.css" />
+</head>
+<body>
+<h1>tree level demo</h1>
+<br /><br />
+
+<div class="ctreetable">
+	<table  align="center" width="100%" cellspacing="0">
+	<script type="text/javascript" src="ctreetable.js"></script>
+	<script type="text/javascript" charset="utf-8">
+
+	function getArray(id,departmentName,departmentShortName,paymentName,state,parentID){
+			   var array = [];
+			   //array[0] = departmentShortName;
+			   /*array[1] = paymentName;*/
+			   if(state==1){
+				 array[0]= '正常';
+			   }else if(state==0){
+				 array[0]= '停用';
+			   }else{
+				 array[0]= '注销';
+			   }
+
+
+			   array[1] = '<a  class="operate operate_add add_department" title="添加" href="javascript:void(0);" onclick="addsector('+id+');">添加</a>';
+			   if(parentID==0){
+				 array[1] += '';
+				 array[1] += '';
+			  
+			   }else{
+				 array[1] += ' | <a  class="operate operate_edit modify_department" title="修改" href="javascript:void(0);" onclick="modifysector('+id+');">修改</a>';
+				 array[1] += ' | <a  class="operate operate_delete delete_department" title="注销" href="javascript:void(0);"  onclick="deletesector('+id+');">注销</a>';
+			   }
+			   return array;
+	} 
+
+		<!--
+			d = new cTreeTable('d',3);
+			d.config.useSelection = true;
+			d.config.rowSelection = true;
+			d.config.closeSameLevel = true;
+			d.config.useChecks = true;
+			d.config.folderChecks = true;
+			d.config.checkSubs = true;
+			d.config.validLevel = 2;
+			d.config.stepDepth = 5;
+			d.config.iconPath = './newtree';
+			d.icon = {
+				root		: '/base.png',
+				folder		: '/folder.png',
+				folderOpen	: '/folderopen.png',
+				node		: '/page.png',
+				empty		: '/empty.png',
+				line		: '/line.png',
+				join		: '/join.png',
+				joinBottom	: '/joinbottom.png',
+				plus		: '/plus.png',
+				plusBottom	: '/plusbottom.png',
+				minus		: '/minus.png',
+				minusBottom	: '/minusbottom.png',
+				nlPlus		: '/nolines_plus.png',
+				nlMinus		: '/nolines_minus.png',
+				layerIco :[{ // level icon added by cai
+					close:'/folder_1.png',
+					open:'/folder_1_open.png'
+				},{
+					close:'/folder_2.png',
+					open:'/folder_2_open.png'
+				},{
+					close:'/folder_end.png',
+					open:'/folder_end_open.png'
+				}]
+			};
+			
+			//生成树型结构
+			d.add('300001571','300001570','财务部',getArray('300001571','财务部','','','1','300001570'));
+			d.add('300001569','300000101','技术部',getArray('300001569','技术部','','','1','300000101'));
+			d.add('300001572','300001570','人力资源部',getArray('300001572','人力资源部','','','1','300001570'));
+			d.add('300001570','300000101','事业部',getArray('300001570','事业部','','','1','300000101'));
+			d.add('300001051','300000101','客服部',getArray('300001051','客服部','','','1','300000101'));
+			d.add('300000714','300000101','市场部',getArray('300000714','市场部','莱客','','1','300000101'));
+			d.add('300000101','0','pbtest',getArray('300000101','pbtest','pbtest','','1','0'));
+			d.add('300000318','300000101','网站运营部',getArray('300000318','网站运营部','部门2','','1','300000101'));		
+			document.write(d);
+			//-->
+		</script>
+		
+	</table>
+		
+
+</div>	
+
+	
+	
+</body>
+</html>
+
+
