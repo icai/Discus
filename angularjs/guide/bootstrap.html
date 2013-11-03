@@ -1,0 +1,13 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng-app id="ng-app" >
+  <body>
+    Hello {{'World'}}!
+    <script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+    <script>
+       angular.element(document).ready(function() {
+         angular.module('myApp', []);
+         angular.bootstrap(document, ['myApp']);
+       });
+    </script>
+  </body>
+</html>
