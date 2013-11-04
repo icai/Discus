@@ -1,3 +1,6 @@
 [submodule "angularjs/asset"]
 	path = angularjs/asset
 	url = https://github.com/angular/angular.js.git
+[submodule "colliejs-animate/js/gsap"]
+	path = colliejs-animate/js/gsap
+	url = https://github.com/greensock/GreenSock-JS.git
