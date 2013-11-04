@@ -1,0 +1,12 @@
+<!doctype html>
+<html ng-app="directive">
+  <head>
+    <script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div contentEditable="true" ng-model="content">Edit Me</div>
+    <div>model = {{content | antislash}}</div>
+  </body>
+</html>
