@@ -4,3 +4,9 @@ div[contentEditable] {
   margin-bottom: 1em;
   padding: 1em;
 }
+
+
+/* remove .doc-example-live in jsfiddle */
+.scope-test .ng-scope {
+  border: 1px dashed red;
+}

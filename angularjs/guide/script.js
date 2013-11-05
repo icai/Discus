@@ -4,6 +4,17 @@ function InvoiceCntl($scope) {
 }
 
 
+function MyController($scope) {
+  $scope.username = 'World';
+
+  $scope.greeting = 'Hello init !'
+ 
+  $scope.sayHello = function() {
+    $scope.greeting = 'Hello ' + $scope.username + '!';
+  };
+}
+
+
 
 angular.module('drag', []).
   directive('draggable', function($document) {
@@ -170,3 +181,24 @@ angular.module('docsTimeDirective', [])
     };
 });
 
+
+//  scope hierarchies
+
+function EmployeeController($scope) {
+  $scope.department = 'Engineering';
+  $scope.employee = {
+    name: 'Joe the Manager',
+    reports: [
+      {name: 'John Smith'},
+      {name: 'Mary Run'}
+    ]
+  };
+}
+
+// controller : scope events propagation
+function EventController($scope) {
+  $scope.count = 0;
+  $scope.$on('MyEvent', function() {
+    $scope.count++;
+  });
+}
