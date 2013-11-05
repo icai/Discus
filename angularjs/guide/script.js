@@ -179,7 +179,7 @@ angular.module('docsTimeDirective', [])
     return {
       link: link
     };
-});
+  });
 
 
 //  scope hierarchies
@@ -202,3 +202,63 @@ function EventController($scope) {
     $scope.count++;
   });
 }
+
+
+
+
+// templates-demo 
+angular.module('ngViewExample', ['ngRoute', 'ngAnimate'],
+  function($routeProvider, $locationProvider) {
+    $routeProvider.when('/Book/:bookId', {
+      templateUrl: '/tmpl/book.html',
+      controller: BookCntl,
+      controllerAs: 'book'
+    });
+    $routeProvider.when('/Book/:bookId/ch/:chapterId', {
+      templateUrl: '/tmpl/chapter.html',
+      controller: ChapterCntl,
+      controllerAs: 'chapter'
+    });
+ 
+    // configure html5 to get links working on jsfiddle
+    $locationProvider.html5Mode(true);
+});
+ 
+function MainCntl($route, $routeParams, $location) {
+  this.$route = $route;
+  this.$location = $location;
+  this.$routeParams = $routeParams;
+}
+ 
+function BookCntl($routeParams) {
+  this.name = "BookCntl";
+  this.params = $routeParams;
+}
+ 
+function ChapterCntl($routeParams) {
+  this.name = "ChapterCntl";
+  this.params = $routeParams;
+}
+
+// injecting-s2c
+
+angular.
+ module('MyServiceModule', []).
+ factory('notify', ['$window', function(win) {
+    var msgs = [];
+    return function(msg) {
+      msgs.push(msg);
+      if (msgs.length == 3) {
+        win.alert(msgs.join("\n"));
+        msgs = [];
+      }
+    };
+  }]);
+ 
+function myController(scope, notifyService) {
+  scope.callNotify = function(msg) {
+    notifyService(msg);
+  };
+}
+ 
+myController.$inject = ['$scope','notify'];
